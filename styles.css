@@ -1,11 +1,12 @@
 body {
-  height: 500px;
+  height: 350px;
   /*max height 600*/
   width: 200px;
   /*max width 800*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #42c5f7;
 }
 
 button {
@@ -15,6 +16,10 @@ button {
   margin: 10px;
   border: none;
   border-radius: 2px;
+  background-color: lightcoral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button.current {
