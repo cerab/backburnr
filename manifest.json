@@ -1,0 +1,25 @@
+{
+    "name": "Codesmith+",
+    "description": "Helpful add-ons to improve your Codesmith experience!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+      },
+    "permissions": ["storage", "activeTab", "scripting", "bookmarks"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {//toolbar icons
+            "16": "/images/free.png",
+            "32": "/images/free.png",
+            "48": "/images/free.png",
+            "128": "/images/free.png"
+          }
+      },
+    "icons": { //extension page icons
+        "16": "/images/free.png",
+        "32": "/images/free.png",
+        "48": "/images/free.png",
+        "128": "/images/free.png"
+      }
+  }
