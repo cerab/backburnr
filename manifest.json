@@ -14,14 +14,14 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": { //toolbar icons
+    "default_icon": {
       "16": "/images/backburnr.png",
       "32": "/images/backburnr.png",
       "48": "/images/backburnr.png",
       "128": "/images/backburnr.png"
     }
   },
-  "icons": { //extension page icons
+  "icons": {
     "16": "/images/backburnr.png",
     "32": "/images/backburnr.png",
     "48": "/images/backburnr.png",
