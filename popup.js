@@ -57,9 +57,9 @@ option1Button.addEventListener('mouseout', () => {
 option2Button.addEventListener('mouseover', () => {
     popup2.style.display = 'block';
 })
-// option2Button.addEventListener('mouseout', () => {
-//     popup2.style.display = 'none';
-// })
+option2Button.addEventListener('mouseout', () => {
+    popup2.style.display = 'none';
+})
 
 
 
