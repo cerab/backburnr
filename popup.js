@@ -35,11 +35,12 @@ addFolderButton.addEventListener("click", async () => {
 randomizeButton.addEventListener("click", async () => {
     chrome.storage.sync.get("id", ({ id }) => {
         chrome.bookmarks.getChildren(`${id}`, (data) => {
-            const random1 = data[Math.floor(Math.random() * data.length)];
-            const random2 = data[Math.floor(Math.random() * data.length)];
+            let random1 = data[Math.floor(Math.random() * data.length)];
+            let random2 = data[Math.floor(Math.random() * data.length)];
             //adding in a simple check to make sure the 2 random links are different
             while (random1 === random2) {
-                const random2 = data[Math.floor(Math.random() * data.length)];
+                console.log("in the loop");
+                random2 = data[Math.floor(Math.random() * data.length)];
             }
             //option1Button.innerText = `${random1.title}`;
             //adding in the title added to the popups, then will disply the popup on mouseover
