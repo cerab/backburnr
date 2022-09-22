@@ -1,12 +1,13 @@
 // buttons to use in functions
 const addFolderButton = document.getElementById("addToFolder");
+const addPopup = document.getElementById("addPopup");
 const randomizeButton = document.getElementById("random");
 const option1Button = document.getElementById("button1");
 const option2Button = document.getElementById("button2");
 const popup1 = document.getElementById("popup1");
 const popup2 = document.getElementById("popup2");
 const doneButton = document.getElementById("done");
-const deleteNote = document.getElementById("deletePopup");
+const deletePopup = document.getElementById("deletePopup");
 
 
 // chrome.storage.sync.get("color", ({ color }) => {
@@ -26,7 +27,9 @@ addFolderButton.addEventListener("click", async () => {
             "parentId": id,
             'title': tab.title,
             'url': tab.url,
-        });
+        })
+            .then(() => addPopup.style.display = 'block')
+            .then(() => setTimeout(() => addPopup.style.display = 'none', 2000));;
     });
 });
 
@@ -64,8 +67,8 @@ doneButton.addEventListener('click', async () => {
     if (searchRes[0]) {
         chrome.bookmarks.remove(searchRes[0].id)
             .then(() => console.log('removed'))
-            .then(() => deleteNote.style.display = 'block')
-            .then(() => setTimeout(() => deleteNote.style.display = 'none', 3000));
+            .then(() => deletePopup.style.display = 'block')
+            .then(() => setTimeout(() => deletePopup.style.display = 'none', 2000));
 
     } else (console.log('no record'));
 

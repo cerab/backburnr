@@ -1,5 +1,5 @@
 body {
-  height: 350px;
+  height: 250px;
   /*max height 600*/
   width: 200px;
   /*max width 800*/
@@ -7,6 +7,12 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #42c5f7;
+}
+
+#deletePopup, #popup1, #popup2, #addPopup{
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 button {
@@ -31,7 +37,7 @@ button:hover {
   cursor: pointer;
 }
 
-#random:active {
+#random:active, #addToFolder:active, #done:active {
   animation: shake 0.4s ease-out;
 }
 
@@ -61,4 +67,14 @@ button:hover {
 
 #deletePopup {
   display: none;
+}
+
+#addPopup {
+  display: none;
+}
+
+.two-button-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
