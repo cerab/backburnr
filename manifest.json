@@ -1,6 +1,6 @@
 {
   "name": "Backburnr",
-  "description": "Helpful add-ons to improve your Codesmith experience!",
+  "description": "An easy way to catalogue and randomly seclet bookmarks!",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
