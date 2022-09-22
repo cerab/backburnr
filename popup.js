@@ -5,6 +5,9 @@ const option1Button = document.getElementById("button1");
 const option2Button = document.getElementById("button2");
 const popup1 = document.getElementById("popup1");
 const popup2 = document.getElementById("popup2");
+const doneButton = document.getElementById("done");
+const deleteNote = document.getElementById("deletePopup");
+
 
 // chrome.storage.sync.get("color", ({ color }) => {
 //   changeColor.style.backgroundColor = color;
@@ -34,6 +37,10 @@ randomizeButton.addEventListener("click", async () => {
         chrome.bookmarks.getChildren(`${id}`, (data) => {
             const random1 = data[Math.floor(Math.random() * data.length)];
             const random2 = data[Math.floor(Math.random() * data.length)];
+            //adding in a simple check to make sure the 2 random links are different
+            while (random1 === random2) {
+                const random2 = data[Math.floor(Math.random() * data.length)];
+            }
             //option1Button.innerText = `${random1.title}`;
             //adding in the title added to the popups, then will disply the popup on mouseover
             popup1.innerText = `${random1.title}`;
@@ -46,6 +53,24 @@ randomizeButton.addEventListener("click", async () => {
         });
     });
 });
+
+doneButton.addEventListener('click', async () => {
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    //let parentId = await chrome.storage.sync.get("id", ({ id }));
+
+    const searchRes = await chrome.bookmarks.search({ 'url': tab.url })
+    console.log(searchRes);
+    if (searchRes[0]) {
+        chrome.bookmarks.remove(searchRes[0].id)
+            .then(() => console.log('removed'))
+            .then(() => deleteNote.style.display = 'block')
+            .then(() => setTimeout(() => deleteNote.style.display = 'none', 3000));
+
+    } else (console.log('no record'));
+
+});
+
+
 
 option1Button.addEventListener('mouseover', () => {
     popup1.style.display = 'block';
@@ -60,7 +85,6 @@ option2Button.addEventListener('mouseover', () => {
 option2Button.addEventListener('mouseout', () => {
     popup2.style.display = 'none';
 })
-
 
 
 
