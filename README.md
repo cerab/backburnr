@@ -31,5 +31,5 @@ Once you've completed reading or watching one of your bookmarks, removing the pa
 ## About
 
 #### Made by:
--Alex McPhail: [GitHub](https://github.com/mcphail-alex)
--Cera Barrow: [GitHub](https://github.com/cerab)
+- Alex McPhail: [GitHub](https://github.com/mcphail-alex)
+- Cera Barrow: [GitHub](https://github.com/cerab)
