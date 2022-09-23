@@ -89,10 +89,3 @@ option2Button.addEventListener('mouseover', () => {
 option2Button.addEventListener('mouseout', () => {
     popup2.style.display = 'none';
 })
-
-
-
-// const doc = await chrome.scripting.executeScript({
-//     target: { tabId: tab.id },
-//     func: addToFolder,
-//   });
